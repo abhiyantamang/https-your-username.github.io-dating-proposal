@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I Love You</title>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #ff6f61;
+      margin-bottom: 20px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-yes {
+      background: #ff6f61;
+      color: white;
+    }
+
+    .btn-yes:hover {
+      background: #ff3b2f;
+      transform: scale(1.1);
+    }
+
+    .btn-no {
+      background: #ddd;
+      color: #333;
+    }
+
+    .btn-no:hover {
+      background: #ccc;
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>I Love You 💖</h1>
+    <p>
+      I’ve loved you for a very long time, and I can’t keep it to myself anymore. <br>
+      Will you be mine forever?
+    </p>
+    <div class="options">
+      <button class="btn btn-yes" onclick="showResponse('yes')">Yes, I will! 😊</button>
+      <button class="btn btn-no" onclick="showResponse('no')">Let me think... 🤔</button>
+    </div>
+    <p id="response" style="display: none; margin-top: 20px; font-size: 1.5rem; color: #ff6f61;"></p>
+  </div>
+
+  <script>
+    function showResponse(answer) {
+      const responseElement = document.getElementById('response');
+      if (answer === 'yes') {
+        responseElement.textContent = "Yay! You've made me the happiest person alive! 💖";
+      } else {
+        responseElement.textContent = "I’ll wait for you, no matter how long it takes. 💕";
+      }
+      responseElement.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
